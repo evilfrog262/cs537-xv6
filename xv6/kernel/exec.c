@@ -13,7 +13,7 @@ exec(char *path, char **argv)
   char *s, *last;
   int i, off;
   uint argc, sz, sp, ustack[3+MAXARG+1];
-  uint stackPtr;
+  uint stackPtr,endOfStack;
   struct elfhdr elf;
   struct inode *ip;
   struct proghdr ph;
@@ -54,15 +54,16 @@ exec(char *path, char **argv)
   // Allocate a one-page stack at the next page boundary
   sz = PGROUNDUP(sz);
   stackPtr = PGROUNDUP(USERTOP-PGSIZE);
-  cprintf("stackPtr: %d\n",stackPtr);
+  endOfStack = stackPtr;
+  //cprintf("stackPtr: %d\n",stackPtr);
   cprintf("USERTOP: %d\n",USERTOP);
   if((stackPtr = allocuvm(pgdir,stackPtr,stackPtr+PGSIZE)) == 0)
   //if((sz = allocuvm(pgdir, sz, sz + PGSIZE)) == 0)
     goto bad;
-  cprintf("stackPtr after allocuvm: %d\n",stackPtr);
+  //cprintf("stackPtr after allocuvm: %d\n",stackPtr);
 
   // Push argument strings, prepare rest of stack in ustack.
-  sp = stackPtr;
+  sp = stackPtr;//sz;
   for(argc = 0; argv[argc]; argc++) {
     if(argc >= MAXARG)
       goto bad;
@@ -89,12 +90,16 @@ exec(char *path, char **argv)
   safestrcpy(proc->name, last, sizeof(proc->name));
 
   // Commit to the user image.
+
+
+
   oldpgdir = proc->pgdir;
   proc->pgdir = pgdir;
   proc->sz = sz;
   cprintf("sz: %d\n",sz);
   proc->tf->eip = elf.entry;  // main
   proc->tf->esp = sp;
+  proc->endOfStack = endOfStack;
   cprintf("sp: %d\n",sp);
   switchuvm(proc);
   freevm(oldpgdir);

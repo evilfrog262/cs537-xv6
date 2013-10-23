@@ -92,6 +92,7 @@ userinit(void)
   p->tf->ss = p->tf->ds;
   p->tf->eflags = FL_IF;
   p->tf->esp = PGSIZE;
+  cprintf("pagesize initproc: %d\n",p->tf->esp);
   p->tf->eip = 0;  // beginning of initcode.S
 
   safestrcpy(p->name, "initcode", sizeof(p->name));
@@ -110,12 +111,19 @@ growproc(int n)
   
   sz = proc->sz;
   if(n > 0){
-    if((sz = allocuvm(proc->pgdir, sz, sz + n)) == 0)
+  //cprintf("sz: %d\t sp: %d\t sz + n: %d\n",sz,proc->tf->esp - PGSIZE,sz+n);
+  if( sz +n  > proc->endOfStack - PGSIZE){
+        return -1;
+   } 
+   if((sz = allocuvm(proc->pgdir, sz, sz + n)) == 0)
       return -1;
   } else if(n < 0){
     if((sz = deallocuvm(proc->pgdir, sz, sz + n)) == 0)
       return -1;
   }
+  //if( sz > proc->tf->esp - PGSIZE){
+   	//return -1;
+   //} 
   proc->sz = sz;
   switchuvm(proc);
   return 0;
@@ -129,10 +137,11 @@ fork(void)
 {
   int i, pid;
   struct proc *np;
-  //cprintf("fork called!");
+  cprintf("fork called!");
   // Allocate process.
   if((np = allocproc()) == 0)
     return -1;
+
 
   // Copy process state from p.
   if((np->pgdir = copyuvm(proc->pgdir, proc->sz)) == 0){
@@ -141,6 +150,7 @@ fork(void)
     np->state = UNUSED;
     return -1;
   }
+
   np->sz = proc->sz;
   np->parent = proc;
   *np->tf = *proc->tf;
