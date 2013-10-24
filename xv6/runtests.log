@@ -9,34 +9,6 @@ Trying to clean project using make clean
 make clean
 gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
 		-M -MG kernel/vm.c -MF kernel/vm.d -MT kernel/vm.d -MT kernel/vm.o
-gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG kernel/uart.c -MF kernel/uart.d -MT kernel/uart.d -MT kernel/uart.o
-gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG kernel/trap.c -MF kernel/trap.d -MT kernel/trap.d -MT kernel/trap.o
-gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG kernel/sysproc.c -MF kernel/sysproc.d -MT kernel/sysproc.d -MT kernel/sysproc.o
-gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG kernel/sysfile.c -MF kernel/sysfile.d -MT kernel/sysfile.d -MT kernel/sysfile.o
-gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG kernel/syscall.c -MF kernel/syscall.d -MT kernel/syscall.d -MT kernel/syscall.o
-gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG kernel/spinlock.c -MF kernel/spinlock.d -MT kernel/spinlock.d -MT kernel/spinlock.o
-gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG kernel/proc.c -MF kernel/proc.d -MT kernel/proc.d -MT kernel/proc.o
-gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG kernel/pipe.c -MF kernel/pipe.d -MT kernel/pipe.d -MT kernel/pipe.o
-gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG kernel/mp.c -MF kernel/mp.d -MT kernel/mp.d -MT kernel/mp.o
-gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG kernel/main.c -MF kernel/main.d -MT kernel/main.d -MT kernel/main.o
-gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG kernel/ide.c -MF kernel/ide.d -MT kernel/ide.d -MT kernel/ide.o
-gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG kernel/fs.c -MF kernel/fs.d -MT kernel/fs.d -MT kernel/fs.o
-gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG kernel/exec.c -MF kernel/exec.d -MT kernel/exec.d -MT kernel/exec.o
-gcc  -I include -nostdinc -Wall -Werror -ggdb -fno-pic -fno-builtin -fno-strict-aliasing -fno-stack-protector -m32 \
-		-M -MG kernel/console.c -MF kernel/console.d -MT kernel/console.d -MT kernel/console.o
 rm -rf kernel/bio.o kernel/console.o kernel/exec.o kernel/file.o kernel/fs.o kernel/ide.o kernel/ioapic.o kernel/kalloc.o kernel/kbd.o kernel/lapic.o kernel/main.o kernel/mp.o kernel/picirq.o kernel/pipe.o kernel/proc.o kernel/spinlock.o kernel/string.o kernel/swtch.o kernel/syscall.o kernel/sysfile.o kernel/sysproc.o kernel/timer.o kernel/trapasm.o kernel/trap.o kernel/uart.o kernel/vectors.o kernel/vm.o kernel/bootmain.o kernel/bootasm.o kernel/multiboot.o kernel/data.o kernel/bootother.o kernel/initcode.o kernel/bio.d kernel/console.d kernel/exec.d kernel/file.d kernel/fs.d kernel/ide.d kernel/ioapic.d kernel/kalloc.d kernel/kbd.d kernel/lapic.d kernel/main.d kernel/mp.d kernel/picirq.d kernel/pipe.d kernel/proc.d kernel/spinlock.d kernel/string.d kernel/swtch.d kernel/syscall.d kernel/sysfile.d kernel/sysproc.d kernel/timer.d kernel/trapasm.d kernel/trap.d kernel/uart.d kernel/vectors.d kernel/vm.d kernel/bootmain.d kernel/bootasm.d kernel/multiboot.d kernel/data.d kernel/bootother.d kernel/initcode.d kernel/vectors.S kernel/bootblock kernel/bootblock.out kernel/bootother.out kernel/initcode.out kernel/kernel bootother initcode xv6.img user/bin user/cat user/echo user/forktest user/grep user/init user/kill user/ln user/ls user/mkdir user/rm user/sh user/stressfs user/tester user/usertests user/wc user/fault user/zombie user/cat.o user/echo.o user/forktest.o user/grep.o user/init.o user/kill.o user/ln.o user/ls.o user/mkdir.o user/rm.o user/sh.o user/stressfs.o user/tester.o user/usertests.o user/wc.o user/fault.o user/zombie.o user/ulib.o user/usys.o user/printf.o user/umalloc.o user/cat.d user/echo.d user/forktest.d user/grep.d user/init.d user/kill.d user/ln.d user/ls.d user/mkdir.d user/rm.d user/sh.d user/stressfs.d user/tester.d user/usertests.d user/wc.d user/fault.d user/zombie.d user/ulib.d user/usys.d user/printf.d user/umalloc.d tools/mkfs tools/mkfs.o tools/mkfs.d fs fs.img .gdbinit .bochsrc dist
 Trying to build project using make
 make
@@ -261,15 +233,15 @@ ld  -m    elf_i386 -nostdlib --omagic \
 dd if=/dev/zero of=xv6.img count=10000
 10000+0 records in
 10000+0 records out
-5120000 bytes (5.1 MB) copied, 0.108232 s, 47.3 MB/s
+5120000 bytes (5.1 MB) copied, 0.0378402 s, 135 MB/s
 dd if=kernel/bootblock of=xv6.img conv=notrunc
 1+0 records in
 1+0 records out
-512 bytes (512 B) copied, 2.5783e-05 s, 19.9 MB/s
+512 bytes (512 B) copied, 1.9527e-05 s, 26.2 MB/s
 dd if=kernel/kernel of=xv6.img seek=1 conv=notrunc
 253+1 records in
 253+1 records out
-129668 bytes (130 kB) copied, 0.000388207 s, 334 MB/s
+129872 bytes (130 kB) copied, 0.000397238 s, 327 MB/s
 gcc -c  -iquote include -Wall -Werror -ggdb  -o tools/mkfs.o tools/mkfs.c
 gcc  tools/mkfs.o -o tools/mkfs
 mkdir -p fs
@@ -332,25 +304,25 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x1000 
 cp user/bin/zombie fs/zombie
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-sh
 usertests
-mkdir
-wc
-grep
-rm
-cat
 forktest
+wc
+rm
 README
 init
-zombie
-fault
-kill
-echo
+mkdir
+ls
 tester
 stressfs
+sh
+cat
+fault
 ln
-ls
-balloc: first 439 blocks have been allocated
+grep
+kill
+echo
+zombie
+balloc: first 440 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/stressfs user/bin/fault user/bin/grep user/bin/tester user/bin/kill user/bin/cat user/bin/mkdir user/bin/init user/bin/rm user/bin/echo user/bin/ls user/bin/ln user/bin/usertests user/bin/sh user/bin/wc user/bin/zombie
 
@@ -375,25 +347,25 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x1000 
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-sh
 usertests
-mkdir
-wc
-grep
-rm
-cat
 forktest
+wc
+rm
 README
 init
-zombie
-fault
-kill
-echo
+mkdir
+ls
 tester
 stressfs
+sh
+cat
+fault
 ln
-ls
-balloc: first 439 blocks have been allocated
+grep
+kill
+echo
+zombie
+balloc: first 440 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -407,16 +379,16 @@ cpu0: starting
 pagesize initproc: 4096
 USERTOP: 655360
 sz: 8192
-sp: 655332
+eos: 651264
 init: starting sh
 fork called!USERTOP: 655360
 sz: 12288
-sp: 655336
+eos: 651264
 $ tester
 tester
 fork called!USERTOP: 655360
 sz: 8192
-sp: 655332
+eos: 651264
 fork called!null dereference: pid 4 tester: trap 14 err 4 on cpu 1 eip 0x103b addr 0x0--kill proc
 TEST PASSED
 
@@ -441,25 +413,25 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x1000 
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-sh
 usertests
-mkdir
-wc
-grep
-rm
-cat
 forktest
+wc
+rm
 README
 init
-zombie
-fault
-kill
-echo
+mkdir
+ls
 tester
 stressfs
+sh
+cat
+fault
 ln
-ls
-balloc: first 439 blocks have been allocated
+grep
+kill
+echo
+zombie
+balloc: first 440 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -473,19 +445,19 @@ cpu0: starting
 pagesize initproc: 4096
 USERTOP: 655360
 sz: 8192
-sp: 655332
+eos: 651264
 init: starting sh
 fork called!USERTOP: 655360
 sz: 12288
-sp: 655336
+eos: 651264
 $ tester
 tester
 fork called!USERTOP: 655360
 sz: 8192
-sp: 655332
-fork called!bad dereference (0x0fff): pid 4 tester: trap 14 err 4 on cpu 0 eip 0x103b addr 0xfff--kill proc
+eos: 651264
+fork called!bad dereference (0x0fff): pid 4 tester: trap 14 err 4 on cpu 1 eip 0x103b addr 0xfff--kill proc
 TEST PASSED
-
+$ 
 
 test null2 PASSED
  (any dereference from first page should fault)
@@ -507,25 +479,25 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x1000 
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-sh
 usertests
-mkdir
-wc
-grep
-rm
-cat
 forktest
+wc
+rm
 README
 init
-zombie
-fault
-kill
-echo
+mkdir
+ls
 tester
 stressfs
+sh
+cat
+fault
 ln
-ls
-balloc: first 439 blocks have been allocated
+grep
+kill
+echo
+zombie
+balloc: first 440 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -539,18 +511,18 @@ cpu0: starting
 pagesize initproc: 4096
 USERTOP: 655360
 sz: 8192
-sp: 655332
+eos: 651264
 init: starting sh
 fork called!USERTOP: 655360
 sz: 12288
-sp: 655336
+eos: 651264
 $ tester
 tester
 fork called!USERTOP: 655360
 sz: 8192
-sp: 655332
+eos: 651264
 TEST PASSED
-
+$ 
 
 test stack PASSED
  (stack should be at high end of address space)
@@ -572,25 +544,25 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x1000 
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-sh
 usertests
-mkdir
-wc
-grep
-rm
-cat
 forktest
+wc
+rm
 README
 init
-zombie
-fault
-kill
-echo
+mkdir
+ls
 tester
 stressfs
+sh
+cat
+fault
 ln
-ls
-balloc: first 440 blocks have been allocated
+grep
+kill
+echo
+zombie
+balloc: first 441 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -604,18 +576,18 @@ cpu0: starting
 pagesize initproc: 4096
 USERTOP: 655360
 sz: 8192
-sp: 655332
+eos: 651264
 init: starting sh
 fork called!USERTOP: 655360
 sz: 12288
-sp: 655336
+eos: 651264
 $ tester
 tester
 fork called!USERTOP: 655360
 sz: 8192
-sp: 655332
+eos: 651264
 TEST PASSED
-$ 
+
 
 test stack2 PASSED
  (stack should grow towards lower addresses as usual)
@@ -637,25 +609,25 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x1000 
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-sh
 usertests
-mkdir
-wc
-grep
-rm
-cat
 forktest
+wc
+rm
 README
 init
-zombie
-fault
-kill
-echo
+mkdir
+ls
 tester
 stressfs
+sh
+cat
+fault
 ln
-ls
-balloc: first 439 blocks have been allocated
+grep
+kill
+echo
+zombie
+balloc: first 440 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -669,16 +641,16 @@ cpu0: starting
 pagesize initproc: 4096
 USERTOP: 655360
 sz: 8192
-sp: 655332
+eos: 651264
 init: starting sh
 fork called!USERTOP: 655360
 sz: 12288
-sp: 655336
+eos: 651264
 $ tester
 tester
 fork called!USERTOP: 655360
 sz: 8192
-sp: 655332
+eos: 651264
 fork called!pid 4 tester: trap 14 err 6 on cpu 1 eip 0x1015 addr 0x9effc--kill proc
 $ 
 
@@ -703,25 +675,25 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x1000 
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-sh
 usertests
-mkdir
-wc
-grep
-rm
-cat
 forktest
+wc
+rm
 README
 init
-zombie
-fault
-kill
-echo
+mkdir
+ls
 tester
 stressfs
+sh
+cat
+fault
 ln
-ls
-balloc: first 440 blocks have been allocated
+grep
+kill
+echo
+zombie
+balloc: first 441 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -735,22 +707,22 @@ cpu0: starting
 pagesize initproc: 4096
 USERTOP: 655360
 sz: 8192
-sp: 655332
+eos: 651264
 init: starting sh
 fork called!USERTOP: 655360
 sz: 12288
-sp: 655336
+eos: 651264
 $ tester
 tester
 fork called!USERTOP: 655360
 sz: 8192
-sp: 655332
-pid 3 tester: trap 14 err 4 on cpu 1 eip 0x1009 addr 0x9efa0--kill proc
-$ 
+eos: 651264
+fork called!pid 4 tester: trap 14 err 4 on cpu 1 eip 0x1009 addr 0x9df80--kill proc
+TEST PASSED
 
-test stack4 FAILED
+
+test stack4 PASSED
  (stack should not grow into heap (program must terminate))
- tester failed
 
 
 **********************************************************************
@@ -769,25 +741,25 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x1000 
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-sh
 usertests
-mkdir
-wc
-grep
-rm
-cat
 forktest
+wc
+rm
 README
 init
-zombie
-fault
-kill
-echo
+mkdir
+ls
 tester
 stressfs
+sh
+cat
+fault
 ln
-ls
-balloc: first 440 blocks have been allocated
+grep
+kill
+echo
+zombie
+balloc: first 441 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -801,16 +773,16 @@ cpu0: starting
 pagesize initproc: 4096
 USERTOP: 655360
 sz: 8192
-sp: 655332
+eos: 651264
 init: starting sh
 fork called!USERTOP: 655360
 sz: 12288
-sp: 655336
+eos: 651264
 $ tester
 tester
 fork called!USERTOP: 655360
 sz: 8192
-sp: 655332
+eos: 651264
 TEST PASSED
 
 
@@ -834,25 +806,25 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x1000 
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-sh
 usertests
-mkdir
-wc
-grep
-rm
-cat
 forktest
+wc
+rm
 README
 init
-zombie
-fault
-kill
-echo
+mkdir
+ls
 tester
 stressfs
+sh
+cat
+fault
 ln
-ls
-balloc: first 440 blocks have been allocated
+grep
+kill
+echo
+zombie
+balloc: first 441 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -866,16 +838,16 @@ cpu0: starting
 pagesize initproc: 4096
 USERTOP: 655360
 sz: 8192
-sp: 655332
+eos: 651264
 init: starting sh
 fork called!USERTOP: 655360
 sz: 12288
-sp: 655336
+eos: 651264
 $ tester
 tester
 fork called!USERTOP: 655360
 sz: 8192
-sp: 655332
+eos: 651264
 TEST PASSED
 
 
@@ -899,25 +871,25 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x1000 
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-sh
 usertests
-mkdir
-wc
-grep
-rm
-cat
 forktest
+wc
+rm
 README
 init
-zombie
-fault
-kill
-echo
+mkdir
+ls
 tester
 stressfs
+sh
+cat
+fault
 ln
-ls
-balloc: first 440 blocks have been allocated
+grep
+kill
+echo
+zombie
+balloc: first 441 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -931,19 +903,19 @@ cpu0: starting
 pagesize initproc: 4096
 USERTOP: 655360
 sz: 8192
-sp: 655332
+eos: 651264
 init: starting sh
 fork called!USERTOP: 655360
 sz: 12288
-sp: 655336
+eos: 651264
 $ tester
 tester
 fork called!USERTOP: 655360
 sz: 8192
-sp: 655332
-unexpected trap 14 from cpu 1 eip 1049c6 (cr2=0x0)
+eos: 651264
+unexpected trap 14 from cpu 1 eip 1049ce (cr2=0x0)
 cpu1: panic: trap
-
+ 1060cc 105cf1 101fb4 10126a 104fce 104d77 105efd 105cf1 0 0
 
 test bounds FAILED
  (syscall argument checks (null page))
@@ -966,25 +938,25 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x1000 
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-sh
 usertests
-mkdir
-wc
-grep
-rm
-cat
 forktest
+wc
+rm
 README
 init
-zombie
-fault
-kill
-echo
+mkdir
+ls
 tester
 stressfs
+sh
+cat
+fault
 ln
-ls
-balloc: first 442 blocks have been allocated
+grep
+kill
+echo
+zombie
+balloc: first 443 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -998,17 +970,17 @@ cpu0: starting
 pagesize initproc: 4096
 USERTOP: 655360
 sz: 8192
-sp: 655332
+eos: 651264
 init: starting sh
 fork called!USERTOP: 655360
 sz: 12288
-sp: 655336
+eos: 651264
 $ tester
 tester
 fork called!USERTOP: 655360
 sz: 8192
-sp: 655332
-unexpected trap 14 from cpu 1 eip 1049c6 (cr2=0xfff)
+eos: 651264
+unexpected trap 14 from cpu 1 eip 1049ce (cr2=0xfff)
 cpu1: panic: trap
 
 
@@ -1033,25 +1005,25 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x1000 
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-sh
 usertests
-mkdir
-wc
-grep
-rm
-cat
 forktest
+wc
+rm
 README
 init
-zombie
-fault
-kill
-echo
+mkdir
+ls
 tester
 stressfs
+sh
+cat
+fault
 ln
-ls
-balloc: first 442 blocks have been allocated
+grep
+kill
+echo
+zombie
+balloc: first 443 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -1065,18 +1037,19 @@ cpu0: starting
 pagesize initproc: 4096
 USERTOP: 655360
 sz: 8192
-sp: 655332
+eos: 651264
 init: starting sh
 fork called!USERTOP: 655360
 sz: 12288
-sp: 655336
+eos: 651264
 $ tester
 tester
 fork called!USERTOP: 655360
 sz: 8192
-sp: 655332
-pid 3 tester: trap 14 err 6 on cpu 1 eip 0x1016 addr 0x9ef7c--kill proc
-$ 
+eos: 651264
+user/tester.c: 47 assert failed (write(fd, arg, 1) != -1)
+TEST FAILED
+
 
 test bounds3 FAILED
  (syscall argument checks (stack boundaries))
@@ -1099,25 +1072,25 @@ ld  -m    elf_i386 -nostdlib --omagic --entry=main --section-start=.text=0x1000 
 cp user/bin/tester fs/tester
 ./tools/mkfs fs.img fs
 used 29 (bit 1 ninode 26) free 29 total 1024
-sh
 usertests
-mkdir
-wc
-grep
-rm
-cat
 forktest
+wc
+rm
 README
 init
-zombie
-fault
-kill
-echo
+mkdir
+ls
 tester
 stressfs
+sh
+cat
+fault
 ln
-ls
-balloc: first 442 blocks have been allocated
+grep
+kill
+echo
+zombie
+balloc: first 443 blocks have been allocated
 balloc: write bitmap block at sector 28
 rm user/bin/tester
 make qemu-nox 
@@ -1131,19 +1104,19 @@ cpu0: starting
 pagesize initproc: 4096
 USERTOP: 655360
 sz: 8192
-sp: 655332
+eos: 651264
 init: starting sh
 fork called!USERTOP: 655360
 sz: 12288
-sp: 655336
+eos: 651264
 $ tester
 tester
 fork called!USERTOP: 655360
 sz: 8192
-sp: 655332
-unexpected trap 14 from cpu 1 eip 104bea (cr2=0xfff)
+eos: 651264
+unexpected trap 14 from cpu 1 eip 104bf7 (cr2=0xfff)
 cpu1: panic: trap
-
+ 106
 
 test bounds4 FAILED
  (syscall argument checks (string arg))
@@ -1170,9 +1143,8 @@ test stack3 FAILED
  (stack should grow automatically on a page fault)
  tester failed
 
-test stack4 FAILED
+test stack4 PASSED
  (stack should not grow into heap (program must terminate))
- tester failed
 
 test heap PASSED
  (heap can grow to 1 page below stack)
@@ -1196,5 +1168,5 @@ test bounds4 FAILED
  (syscall argument checks (string arg))
  xv6 kernel panic
 
-Passed 7 of 13 tests.
-Overall 7 of 13
+Passed 8 of 13 tests.
+Overall 8 of 13

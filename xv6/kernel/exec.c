@@ -100,7 +100,7 @@ exec(char *path, char **argv)
   proc->tf->eip = elf.entry;  // main
   proc->tf->esp = sp;
   proc->endOfStack = endOfStack;
-  cprintf("sp: %d\n",sp);
+  cprintf("eos: %d\n",proc->endOfStack);
   switchuvm(proc);
   freevm(oldpgdir);
 
