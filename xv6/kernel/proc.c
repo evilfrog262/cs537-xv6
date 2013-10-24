@@ -112,6 +112,7 @@ growproc(int n)
   sz = proc->sz;
   if(n > 0){
   //cprintf("sz: %d\t sp: %d\t sz + n: %d\n",sz,proc->tf->esp - PGSIZE,sz+n);
+  cprintf("end of stack(proc): %d\n", proc->endOfStack);
   if( sz +n  > proc->endOfStack - PGSIZE){
         return -1;
    } 
@@ -151,6 +152,7 @@ fork(void)
     return -1;
   }
 
+  np->endOfStack = proc->endOfStack;
   np->sz = proc->sz;
   np->parent = proc;
   *np->tf = *proc->tf;

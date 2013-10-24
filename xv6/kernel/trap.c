@@ -79,19 +79,25 @@ trap(struct trapframe *tf)
   default:
   //HERE WE GO  
   if(tf->trapno == T_PGFLT){
-    if(proc->tf->esp < proc->endOfStack){
-      //if(proc->tf->esp <= proc->sz + PGSIZE){
+    cprintf("PAGE FAULT!\n");
+    cprintf("stack ptr: %d\tend of stack: %d\n", proc->tf->esp, proc->endOfStack);
+    if(proc->tf->esp <= proc->endOfStack){
+      if(proc->tf->esp > proc->sz + PGSIZE){
         // break;
-        //}
+       // }
        uint oldEOS = proc->endOfStack;
-       uint newEOS = (int)PGROUNDDOWN(proc->tf->esp);
+       cprintf("old EOS: %d\n", oldEOS);
+       uint newEOS = (int)PGROUNDUP(proc->tf->esp) - PGSIZE;
+       cprintf("new EOS: %d\n", newEOS);
        uint newstk = allocuvm(proc->pgdir,newEOS,oldEOS);
-       proc->endOfStack = newEOS;
+       cprintf("newstk: %d\n", newstk);
        if(newstk==0){
                 panic("dont know what to do");
         }
+	proc->endOfStack=newEOS;
      return;
     }
+  }
   }
 
 //END SID EDIT

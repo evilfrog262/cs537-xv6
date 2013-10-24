@@ -55,7 +55,7 @@ exec(char *path, char **argv)
   sz = PGROUNDUP(sz);
   stackPtr = PGROUNDUP(USERTOP-PGSIZE);
   endOfStack = stackPtr;
-  //cprintf("stackPtr: %d\n",stackPtr);
+  cprintf("end of Stack(exec): %d\n",endOfStack);
   cprintf("USERTOP: %d\n",USERTOP);
   if((stackPtr = allocuvm(pgdir,stackPtr,stackPtr+PGSIZE)) == 0)
   //if((sz = allocuvm(pgdir, sz, sz + PGSIZE)) == 0)
